@@ -8,6 +8,6 @@ const Signup = () => {
             <form action=""></form>
         </div>
     </div>
-}a
+}
 
 export default Signup;
