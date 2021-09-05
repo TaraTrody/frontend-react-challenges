@@ -3,15 +3,23 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from 'react-router-dom'
-import 
+
+import Gallery from "./home"
+import Signup from "./sign-up_form"
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <Router>
+      <div className="App"> 
+        <Gallery/>
+        <Switch>
+          <Route path="/signup">
+            <Signup/>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
