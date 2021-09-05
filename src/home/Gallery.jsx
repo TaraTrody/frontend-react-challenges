@@ -1,19 +1,22 @@
 import React from "react";
 import {
-    BrowserRouter as Router,
     Link
 } from  'react-router-dom';
 
-export default function Gallery() {
+const Gallery = () => {
     return(
-        <div>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/sign-up-form">Sign-up Form</Link>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+        
+            <div>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="/signup">Sign-up Form</Link>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+    
     )
 };
+
+export default Gallery;
