@@ -4,10 +4,14 @@ import styled from "styled-components";
 const Signup = () => {
   return (
     <Container>
-        <TitleText>
-          <h1>Learn to code by watching others</h1>
-          <p>See how experienced developers solve problem in real-time. Watching scripted tutorials is great, but understanding how developers think is valuable</p>
-        </TitleText>
+      <TitleText>
+        <h1>Learn to code by watching others</h1>
+        <p>
+          See how experienced developers solve problem in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          valuable
+        </p>
+      </TitleText>
     </Container>
   );
 };
@@ -23,7 +27,6 @@ const Container = styled.div`
 `;
 
 const TitleText = styled.div`
-
+  font-family: "Poppins";
+  font-weight: 700;
 `;
-
-
