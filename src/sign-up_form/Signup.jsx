@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import img from "../assets/images/bg-intro-mobile.png";
 
 const Signup = () => {
   return (
@@ -19,14 +20,13 @@ const Signup = () => {
 export default Signup;
 
 const Container = styled.div`
+  background: url(${img});
   display: grid;
   width: 375px;
   height: 100vh;
-  background: pink;
   opacity: 1;
 `;
 
 const TitleText = styled.div`
-  font-family: "Poppins";
   font-weight: 700;
 `;
