@@ -14,6 +14,9 @@ const Signup = () => {
             is valuable
           </p>
         </TitleText>
+        <TryItBox>
+          <p>Try it free 7 days then $20/mo thereafter</p>
+        </TryItBox>
       </Overlay>
     </Container>
   );
@@ -22,8 +25,8 @@ const Signup = () => {
 export default Signup;
 
 const Container = styled.div`
+  display: grid
   background-color: rgba(255, 121, 121, 1);
-  display: grid;
   width: 375px;
   height: 100vh;
 `;
@@ -45,4 +48,11 @@ const TitleText = styled.div`
   p {
     font-weight: 500;
   }
+`;
+
+const TryItBox = styled.div`
+  background-color: #5e54a4;
+  width: 151px;
+  height: 79px;
+  color: #fff;
 `;
