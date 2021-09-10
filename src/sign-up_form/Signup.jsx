@@ -28,5 +28,13 @@ const Container = styled.div`
 `;
 
 const TitleText = styled.div`
-  font-weight: 700;
+  margin: 6.25em 1.56em 1.56em 3.125em;
+  
+  h1 {
+    font-weight: 700;
+  }
+
+  p {
+    font-weight: 500;
+  }
 `;
