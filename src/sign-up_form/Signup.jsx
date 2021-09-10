@@ -22,20 +22,21 @@ const Signup = () => {
 export default Signup;
 
 const Container = styled.div`
-  background: url(${img});
-  background-size: cover;
+  background-color: rgba(255, 121, 121, 1);
   display: grid;
   width: 375px;
   height: 100vh;
-  
 `;
 
 const Overlay = styled.div`
-  background: rgb(255, 121, 121, 1);
+  background: url(${img});
+  width: 100%;
+  height: 100%;
 `;
 
 const TitleText = styled.div`
   margin: 6.25em 1.56em 1.56em 3.125em;
+  color: #fff;
 
   h1 {
     font-weight: 700;
