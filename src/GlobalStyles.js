@@ -19,6 +19,10 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Poppins', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
         margin: 0;
     }
+    
+    h1 {
+        margin: 0;
+    }
 
 `;
 
