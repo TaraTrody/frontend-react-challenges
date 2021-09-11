@@ -30,6 +30,12 @@ const Signup = () => {
 export default Signup;
 
 const Container = styled.div`
+  display: grid;
+  grid-template-rows: 2fr 1fr 3fr;
+  grid-template-areas: "TitleWrapper"
+                       "TitleWrapper"
+                       "BoxWrapper"
+                       "FormWrapper"
   background-color: rgba(255, 121, 121, 1);
   width: 375px;
   height: 100vh;
@@ -41,7 +47,9 @@ const Overlay = styled.div`
   height: 100%;
 `;
 
-const TitleWrapper = styled.div``;
+const TitleWrapper = styled.div`
+  grid-area: TitleWrapper;
+`;
 
 const TitleText = styled.div`
   color: #fff;
@@ -55,7 +63,9 @@ const TitleText = styled.div`
   }
 `;
 
-const BoxWrapper = styled.div``;
+const BoxWrapper = styled.div`
+  grid-area: BoxWrapper;
+`;
 
 const Box = styled.div`
   background-color: #5e54a4;
@@ -64,4 +74,6 @@ const Box = styled.div`
   color: #fff;
 `;
 
-const FormWrapper = styled.div``;
+const FormWrapper = styled.div`
+  grid-area: FormWrapper;
+`;
