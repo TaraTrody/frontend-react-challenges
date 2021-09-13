@@ -33,7 +33,7 @@ const Container = styled.div`
   width: 375px;
   height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 2fr 1fr 1fr;
   grid-template-areas:
     "TitleWrapper"
     "BoxWrapper"
@@ -43,8 +43,7 @@ const Container = styled.div`
 
 const TitleWrapper = styled.div`
   grid-area: TitleWrapper;
-  align-self: center;
-  margin-top: 5.3rem;
+  display: flex;
 `;
 
 const BoxWrapper = styled.div`
@@ -59,13 +58,14 @@ const FormWrapper = styled.div`
 const TitleText = styled.div`
   color: #fff;
   text-align: center;
+  margin: auto;
 
   h1 {
-    font-weight: 300;
+
+    margin-bottom: 1rem;
   }
 
   p {
-    font-weight: 400;
   }
 `;
 
@@ -75,7 +75,6 @@ const Box = styled.div`
   height: 5rem;
   color: #fff;
   text-align: center;
-  
 
   p {
     width: 250px;
