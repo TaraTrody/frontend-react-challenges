@@ -17,7 +17,9 @@ const Signup = () => {
       </TitleSection>
       <BoxSection>
         <Box>
-          <p>Try it free 7 days then $20/mo thereafter</p>
+          <p>
+            <b>Try it free 7 days</b> then $20/mo thereafter
+          </p>
         </Box>
       </BoxSection>
       <FormSection>
@@ -53,6 +55,7 @@ const Signup = () => {
               <span>Terms and Services</span>
             </p>
           </form>
+        </FormBox>
       </FormSection>
     </Container>
   );
@@ -64,9 +67,8 @@ const Container = styled.div`
   background-color: #ff7979;
   background-image: url(${img});
   width: 375px;
-  height: 100vh;
   display: grid;
-  grid-template-rows: 2fr 1fr 1fr;
+  grid-template-rows: 2fr auto 3fr;
   grid-template-areas:
     "TitleWrapper"
     "BoxWrapper"
@@ -82,10 +84,12 @@ const TitleSection = styled.div`
 const BoxSection = styled.div`
   grid-area: BoxWrapper;
   justify-self: center;
+  align-self: end;
 `;
 
 const FormSection = styled.div`
   grid-area: FormWrapper;
+  justify-self: center;
 `;
 
 const TitleText = styled.div`
@@ -127,9 +131,51 @@ const FormBox = styled.div`
   background-color: #fff;
   width: 20.4rem;
   color: #3d3b48;
+  margin-top: 2rem;
   display: flex;
-  align-content: center;
   justify-content: center;
   border-radius: 0.625em;
-  box-shadow: 0 8px 0 rgb(0 0 0 / 0.2), inset 0 1px 3px rgb(0 0 0 / 0.25);
+  box-shadow: 3px 3px 0 rgb(0 0 0 / 0.2), inset 0 1px 3px rgb(0 0 0 / 0.25);
+
+  form {
+    width: 17.4rem;
+    margin-top: 1.2em;
+    margin-bottom: 1.87em;
+  }
+
+  form > input {
+    width: 100%;
+    height: 3.5rem;
+    border: 1px inset rgb(0 0 0 / 0.2);
+    border-radius: 5px;
+    margin-bottom: 1em;
+    padding-left: 1.6em;
+    font-weight: 600
+    font-size: 0.875rem;
+    letter-spacing: 0.1rem;
+  }
+
+  form > button {
+    background-color: #38cc8b;
+    color: #fff;
+    width: 100%;
+    height: 3.5rem;
+    border-radius: 5px;
+    box-shadow: 3px 3px 0 rgb(56, 204, 139, 0.2),
+      inset 0 1px 3px rgb(0 0 0 / 0.25);
+    margin-bottom: 1em;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+  }
+
+  form > p {
+    font-size: 0.6875rem;
+    text-align: center;
+
+    span {
+      font-weight: 700;
+      color: #ff7979;
+    }
+  }
 `;
