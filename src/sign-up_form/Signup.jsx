@@ -72,6 +72,8 @@ const Box = styled.div`
   color: #fff;
   display: flex;
   align-content: center;
+  border-radius: 0.625em;
+  box-shadow: 0 8px 0 rgb(0 0 0 / 0.2), inset 0 1px 3px rgb(0 0 0 / 0.25);
 
   p {
     width: 250px;
