@@ -30,6 +30,10 @@ const GlobalStyles = createGlobalStyle`
         margin: 0;
         font-weight: inherit;
     }
+    
+    input {
+        margin: 0
+    }
 
     h1 {
         font-size: 2rem;
