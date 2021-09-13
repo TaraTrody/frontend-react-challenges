@@ -89,12 +89,20 @@ const FormSection = styled.div`
 `;
 
 const TitleText = styled.div`
+  width: 20.4rem;
   color: #fff;
   text-align: center;
-  margin: auto;
+  margin: 5.3rem auto;
 
   h1 {
     margin-bottom: 1rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02rem;
+  }
+
+  p {
+    font-weight: 500;
   }
 `;
 
