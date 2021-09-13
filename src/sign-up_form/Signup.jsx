@@ -5,24 +5,22 @@ import img from "../assets/images/bg-intro-mobile.png";
 const Signup = () => {
   return (
     <Container>
-      <Overlay>
-        <TitleWrapper>
-          <TitleText>
-            <h1>Learn to code by watching others</h1>
-            <p>
-              See how experienced developers solve problem in real-time.
-              Watching scripted tutorials is great, but understanding how
-              developers think is valuable
-            </p>
-          </TitleText>
-        </TitleWrapper>
-        <BoxWrapper>
-          <Box>
-            <p>Try it free 7 days then $20/mo thereafter</p>
-          </Box>
-        </BoxWrapper>
-        <FormWrapper></FormWrapper>
-      </Overlay>
+      <TitleWrapper>
+        <TitleText>
+          <h1>Learn to code by watching others</h1>
+          <p>
+            See how experienced developers solve problem in real-time. Watching
+            scripted tutorials is great, but understanding how developers think
+            is valuable
+          </p>
+        </TitleText>
+      </TitleWrapper>
+      <BoxWrapper>
+        <Box>
+          <p>Try it free 7 days then $20/mo thereafter</p>
+        </Box>
+      </BoxWrapper>
+      <FormWrapper></FormWrapper>
     </Container>
   );
 };
@@ -30,41 +28,48 @@ const Signup = () => {
 export default Signup;
 
 const Container = styled.div`
-  display: grid;
-  grid-template-rows: 2fr 1fr 3fr;
-  grid-template-areas: "TitleWrapper"
-                       "TitleWrapper"
-                       "BoxWrapper"
-                       "FormWrapper"
-  background-color: rgba(255, 121, 121, 1);
+  background-color: #ff7979;
+  background-image: url(${img});
   width: 375px;
   height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "TitleWrapper"
+    "BoxWrapper"
+    "FormWrapper";
 `;
 
-const Overlay = styled.div`
-  background: url(${img});
-  width: 100%;
-  height: 100%;
-`;
+// const Overlay = styled.div`
+//   background: url(${img});
+//   width: 100%;
+//   height: 100%;
+// `;
 
 const TitleWrapper = styled.div`
   grid-area: TitleWrapper;
-`;
-
-const TitleText = styled.div`
-  color: #fff;
-
-  h1 {
-    font-weight: 700;
-  }
-
-  p {
-    font-weight: 500;
-  }
+  align-self: center;
 `;
 
 const BoxWrapper = styled.div`
   grid-area: BoxWrapper;
+`;
+
+const FormWrapper = styled.div`
+  grid-area: FormWrapper;
+`;
+
+const TitleText = styled.div`
+  color: #fff;
+  text-align: center;
+
+  h1 {
+    // font-weight: 700;
+  }
+
+  p {
+    // font-weight: 500;
+  }
 `;
 
 const Box = styled.div`
@@ -72,8 +77,4 @@ const Box = styled.div`
   width: 151px;
   height: 79px;
   color: #fff;
-`;
-
-const FormWrapper = styled.div`
-  grid-area: FormWrapper;
 `;
