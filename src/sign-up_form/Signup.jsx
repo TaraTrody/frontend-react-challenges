@@ -44,22 +44,49 @@ const Container = styled.div`
     "BoxWrapper"
     "FormWrapper";
   justify-content: center;
+
+  @media (min-width: 376px) {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 25% 75%;
+  }
 `;
 
 const TitleSection = styled.div`
   grid-area: TitleWrapper;
   display: flex;
+
+  @media (min-width: 376px) {
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const BoxSection = styled.div`
   grid-area: BoxWrapper;
   justify-self: center;
   align-self: end;
+
+  @media (min-width: 376px) {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+  }
 `;
 
 const FormSection = styled.div`
   grid-area: FormWrapper;
   justify-self: center;
+
+  @media (min-width: 376px) {
+    grid-column: 2;
+    grid-row: 2;
+  }
 `;
 
 const TitleText = styled.div`
@@ -77,6 +104,21 @@ const TitleText = styled.div`
 
   p {
     font-weight: 500;
+  }
+
+  @media (min-width: 376px) {
+    width: 32.8rem;
+    height: 13.75rem;
+    text-align: left;
+
+    h1 {
+      font-size: 3.125rem;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: 400;
+    }
   }
 `;
 
