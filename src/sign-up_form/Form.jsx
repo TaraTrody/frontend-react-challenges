@@ -92,4 +92,17 @@ const FormContainer = styled.div`
       color: #ff7979;
     }
   }
+
+  @media (min-width: 376px) {
+    width: 33.75rem;  
+    
+
+    form {
+        width: 28.75rem;
+        margin-top: 2em;
+    
+    }
+
+    
+  }
 `;
