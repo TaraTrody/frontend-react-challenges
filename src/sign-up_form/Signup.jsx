@@ -21,7 +21,38 @@ const Signup = () => {
         </Box>
       </BoxSection>
       <FormSection>
-        <FormBox></FormBox>
+        <FormBox>
+          <form action="">
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              placeholder="First Name"
+            />
+            <input
+              type="text"
+              name="lastName"
+              id="lastName"
+              placeholder="Last Name"
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email Address"
+            />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+            />
+            <button type="button">CLAIM YOUR FREE TRIAL</button>
+            <p>
+              By clicking the button, you are agreeing to our{" "}
+              <span>Terms and Services</span>
+            </p>
+          </form>
       </FormSection>
     </Container>
   );
