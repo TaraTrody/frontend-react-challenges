@@ -61,11 +61,7 @@ const TitleText = styled.div`
   margin: auto;
 
   h1 {
-
     margin-bottom: 1rem;
-  }
-
-  p {
   }
 `;
 
@@ -74,9 +70,12 @@ const Box = styled.div`
   width: 20.4rem;
   height: 5rem;
   color: #fff;
-  text-align: center;
+  display: flex;
+  align-content: center;
 
   p {
     width: 250px;
+    margin: auto;
+    text-align: center;
   }
 `;
