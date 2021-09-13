@@ -75,13 +75,13 @@ const BoxSection = styled.div`
   @media (min-width: 376px) {
     grid-column: 2;
     grid-row: 1;
-    justify-self: center;
+    justify-self: start;
   }
 `;
 
 const FormSection = styled.div`
   grid-area: FormWrapper;
-  justify-self: center;
+  justify-self: start;
 
   @media (min-width: 376px) {
     grid-column: 2;
@@ -132,9 +132,14 @@ const Box = styled.div`
   border-radius: 0.625em;
   box-shadow: 3px 3px 0 rgb(0 0 0 / 0.2), inset 0 1px 3px rgb(0 0 0 / 0.25);
   font-size: 0.9rem;
+
   p {
     width: 250px;
     margin: auto;
     text-align: center;
+  }
+
+  @media (min-width: 376px) {
+    width: 33.75rem;
   }
 `;
