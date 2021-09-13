@@ -5,7 +5,7 @@ import img from "../assets/images/bg-intro-mobile.png";
 const Signup = () => {
   return (
     <Container>
-      <TitleWrapper>
+      <TitleSection>
         <TitleText>
           <h1>Learn to code by watching others</h1>
           <p>
@@ -14,13 +14,15 @@ const Signup = () => {
             is valuable
           </p>
         </TitleText>
-      </TitleWrapper>
-      <BoxWrapper>
+      </TitleSection>
+      <BoxSection>
         <Box>
           <p>Try it free 7 days then $20/mo thereafter</p>
         </Box>
-      </BoxWrapper>
-      <FormWrapper></FormWrapper>
+      </BoxSection>
+      <FormSection>
+        <FormBox></FormBox>
+      </FormSection>
     </Container>
   );
 };
@@ -41,17 +43,17 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const TitleWrapper = styled.div`
+const TitleSection = styled.div`
   grid-area: TitleWrapper;
   display: flex;
 `;
 
-const BoxWrapper = styled.div`
+const BoxSection = styled.div`
   grid-area: BoxWrapper;
   justify-self: center;
 `;
 
-const FormWrapper = styled.div`
+const FormSection = styled.div`
   grid-area: FormWrapper;
 `;
 
@@ -80,4 +82,15 @@ const Box = styled.div`
     margin: auto;
     text-align: center;
   }
+`;
+
+const FormBox = styled.div`
+  background-color: #fff;
+  width: 20.4rem;
+  color: #3d3b48;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  border-radius: 0.625em;
+  box-shadow: 0 8px 0 rgb(0 0 0 / 0.2), inset 0 1px 3px rgb(0 0 0 / 0.25);
 `;
