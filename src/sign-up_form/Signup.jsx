@@ -38,21 +38,18 @@ const Container = styled.div`
     "TitleWrapper"
     "BoxWrapper"
     "FormWrapper";
+  justify-content: center;
 `;
-
-// const Overlay = styled.div`
-//   background: url(${img});
-//   width: 100%;
-//   height: 100%;
-// `;
 
 const TitleWrapper = styled.div`
   grid-area: TitleWrapper;
   align-self: center;
+  margin-top: 5.3rem;
 `;
 
 const BoxWrapper = styled.div`
   grid-area: BoxWrapper;
+  justify-self: center;
 `;
 
 const FormWrapper = styled.div`
@@ -64,17 +61,23 @@ const TitleText = styled.div`
   text-align: center;
 
   h1 {
-    // font-weight: 700;
+    font-weight: 300;
   }
 
   p {
-    // font-weight: 500;
+    font-weight: 400;
   }
 `;
 
 const Box = styled.div`
   background-color: #5e54a4;
-  width: 151px;
-  height: 79px;
+  width: 20.4rem;
+  height: 5rem;
   color: #fff;
+  text-align: center;
+  
+
+  p {
+    width: 250px;
+  }
 `;
