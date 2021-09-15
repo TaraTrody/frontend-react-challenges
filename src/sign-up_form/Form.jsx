@@ -43,7 +43,7 @@ export default Form;
 
 const FormContainer = styled.div`
   background-color: #fff;
-  width: 20.4rem;
+  width: 68%;
   color: #3d3b48;
   margin-top: 2rem;
   display: flex;
@@ -52,7 +52,7 @@ const FormContainer = styled.div`
   box-shadow: 3px 3px 0 rgb(0 0 0 / 0.2), inset 0 1px 3px rgb(0 0 0 / 0.25);
 
   form {
-    width: 17.4rem;
+    width: 85%;
     margin-top: 1.2em;
     margin-bottom: 1.87em;
   }
@@ -94,11 +94,11 @@ const FormContainer = styled.div`
   }
 
   @media (min-width: 786px) {
-    width: 33.75rem;  
+    width: 68%;  
     
 
     form {
-        width: 28.75rem;
+        width: 85%;
         margin-top: 2em;
     
     }

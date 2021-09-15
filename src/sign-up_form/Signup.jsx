@@ -36,17 +36,13 @@ export default Signup;
 const Container = styled.div`
   background-color: #ff7979;
   background-image: url(${img});
-  width: 375px;
+  width: 480px;
   display: grid;
   grid-template-rows: 2fr auto 3fr;
-  grid-template-areas:
-    "TitleWrapper"
-    "BoxWrapper"
-    "FormWrapper";
   justify-content: center;
 
   @media (min-width: 786px) {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -55,7 +51,7 @@ const Container = styled.div`
 `;
 
 const TitleSection = styled.div`
-  grid-area: TitleWrapper;
+  grid-row: 1;
   display: flex;
 
   @media (min-width: 786px) {
@@ -68,7 +64,7 @@ const TitleSection = styled.div`
 `;
 
 const BoxSection = styled.div`
-  grid-area: BoxWrapper;
+  grid-row: 2;
   justify-self: center;
   align-self: end;
 
@@ -80,7 +76,7 @@ const BoxSection = styled.div`
 `;
 
 const FormSection = styled.div`
-  grid-area: FormWrapper;
+  grid-row: 3;
   justify-self: start;
 
   @media (min-width: 786px) {
@@ -90,7 +86,7 @@ const FormSection = styled.div`
 `;
 
 const TitleText = styled.div`
-  width: 20.4rem;
+  width: 68%;
   color: #fff;
   text-align: center;
   margin: 5.3rem auto;
@@ -107,7 +103,7 @@ const TitleText = styled.div`
   }
 
   @media (min-width: 786px) {
-    width: 32.8rem;
+    width: 68%;
     height: 13.75rem;
     text-align: left;
 
@@ -124,7 +120,7 @@ const TitleText = styled.div`
 
 const Box = styled.div`
   background-color: #5e54a4;
-  width: 20.4rem;
+  width: 68%;
   height: 5rem;
   color: #fff;
   display: flex;
@@ -134,12 +130,12 @@ const Box = styled.div`
   font-size: 0.9rem;
 
   p {
-    width: 250px;
+    width: 68%;
     margin: auto;
     text-align: center;
   }
 
   @media (min-width: 786px) {
-    width: 33.75rem;
+    width: 68%;
   }
 `;
