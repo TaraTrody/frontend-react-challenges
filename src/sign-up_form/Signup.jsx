@@ -36,7 +36,7 @@ export default Signup;
 const Container = styled.div`
   background-color: #ff7979;
   background-image: url(${img});
-  width: 375px;
+  min-width: 375px;
   display: grid;
   grid-template-rows: 2fr auto 3fr;
   justify-items: center;
@@ -90,7 +90,7 @@ const FormSection = styled.div`
 `;
 
 const TitleText = styled.div`
-  width: 100%;
+  width: 87.2%;
   color: #fff;
   text-align: center;
   margin: 5.3rem auto;
@@ -104,6 +104,16 @@ const TitleText = styled.div`
 
   p {
     font-weight: 500;
+  }
+
+  @media (min-width: 376px) {
+    h1 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
   }
 
   @media (min-width: 786px) {
