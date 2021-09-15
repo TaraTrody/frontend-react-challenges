@@ -36,10 +36,10 @@ export default Signup;
 const Container = styled.div`
   background-color: #ff7979;
   background-image: url(${img});
-  width: 480px;
+  width: 375px;
   display: grid;
   grid-template-rows: 2fr auto 3fr;
-  justify-content: center;
+  justify-items: center;
 
   @media (min-width: 786px) {
     width: 100vw;
@@ -78,16 +78,19 @@ const BoxSection = styled.div`
 
 const FormSection = styled.div`
   grid-row: 3;
-  justify-self: start;
+  display: flex;
+  justify-content: center;
 
   @media (min-width: 786px) {
     grid-column: 2;
     grid-row: 2;
+
+    justify-content: start;
   }
 `;
 
 const TitleText = styled.div`
-  width: 68%;
+  width: 100%;
   color: #fff;
   text-align: center;
   margin: 5.3rem auto;
@@ -121,7 +124,7 @@ const TitleText = styled.div`
 
 const Box = styled.div`
   background-color: #5e54a4;
-  width: 68%;
+  width: 100%;
   height: 5rem;
   color: #fff;
   display: flex;
