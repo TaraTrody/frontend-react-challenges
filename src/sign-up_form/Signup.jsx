@@ -67,6 +67,7 @@ const BoxSection = styled.div`
   grid-row: 2;
   justify-self: center;
   align-self: end;
+  width: 80%;
 
   @media (min-width: 786px) {
     grid-column: 2;
