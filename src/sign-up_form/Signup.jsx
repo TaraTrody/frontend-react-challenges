@@ -45,7 +45,7 @@ const Container = styled.div`
     "FormWrapper";
   justify-content: center;
 
-  @media (min-width: 376px) {
+  @media (min-width: 786px) {
     width: 100%;
     height: 100vh;
     display: grid;
@@ -58,7 +58,7 @@ const TitleSection = styled.div`
   grid-area: TitleWrapper;
   display: flex;
 
-  @media (min-width: 376px) {
+  @media (min-width: 786px) {
     grid-column: 1;
     grid-row-start: 1;
     grid-row-end: 3;
@@ -72,7 +72,7 @@ const BoxSection = styled.div`
   justify-self: center;
   align-self: end;
 
-  @media (min-width: 376px) {
+  @media (min-width: 786px) {
     grid-column: 2;
     grid-row: 1;
     justify-self: start;
@@ -83,7 +83,7 @@ const FormSection = styled.div`
   grid-area: FormWrapper;
   justify-self: start;
 
-  @media (min-width: 376px) {
+  @media (min-width: 786px) {
     grid-column: 2;
     grid-row: 2;
   }
@@ -106,7 +106,7 @@ const TitleText = styled.div`
     font-weight: 500;
   }
 
-  @media (min-width: 376px) {
+  @media (min-width: 786px) {
     width: 32.8rem;
     height: 13.75rem;
     text-align: left;
@@ -139,7 +139,7 @@ const Box = styled.div`
     text-align: center;
   }
 
-  @media (min-width: 376px) {
+  @media (min-width: 786px) {
     width: 33.75rem;
   }
 `;

@@ -93,7 +93,7 @@ const FormContainer = styled.div`
     }
   }
 
-  @media (min-width: 376px) {
+  @media (min-width: 786px) {
     width: 33.75rem;  
     
 
