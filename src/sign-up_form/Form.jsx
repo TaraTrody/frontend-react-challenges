@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { validateForm } from "./formValidation";
 
 const Form = () => {
+  const [formValues, setFormValues] = useState({
+    firstName: null,
+    lastName: null,
+    email: null,
+    password: null,
+  });
+
+  const [errors, setErrors] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
+  
+  const handleChange = (e) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    let errors = state.errors;
+  };
   return (
     <FormContainer>
       <form action="">
