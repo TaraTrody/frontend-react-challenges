@@ -20,7 +20,7 @@ const Form = () => {
   const handleChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
-    let errors = state.errors;
+    let errors = errors;
 
     switch (name) {
       case "firstName":
@@ -48,6 +48,15 @@ const Form = () => {
         break;
     }
     setErrors({ errors, [name]: value });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm(errors)) {
+      console.info("Valid Form");
+    } else {
+      console.error("Invalid Form");
+    }
   };
 
   return (
