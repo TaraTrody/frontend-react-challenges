@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { validateForm } from "./formValidation";
+import { emailRegex, validateForm } from "./formValidation";
 
 const Form = () => {
   const [formValues, setFormValues] = useState({
@@ -16,12 +16,40 @@ const Form = () => {
     email: "",
     password: "",
   });
-  
+
   const handleChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
     let errors = state.errors;
+
+    switch (name) {
+      case "firstName":
+        errors.firstName =
+          value.length < 5
+            ? "First name must be at least 2 characters long"
+            : "";
+        break;
+      case "lastName":
+        errors.lastName =
+          value.length < 2
+            ? "Last name must be at least 2 characters long"
+            : "";
+        break;
+      case "email":
+        errors.email = emailRegex.test(value) ? "" : "Email is not valid!";
+        break;
+      case "password":
+        errors.password =
+          value.length < 8
+            ? "Password must be at least 8 characters long!"
+            : "";
+        break;
+      default:
+        break;
+    }
+    setErrors({ errors, [name]: value });
   };
+
   return (
     <FormContainer>
       <form action="">
