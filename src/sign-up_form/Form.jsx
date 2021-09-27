@@ -3,62 +3,6 @@ import styled from "styled-components";
 import { emailRegex, validateForm } from "./formValidation";
 
 const Form = () => {
-  const [formValues, setFormValues] = useState({
-    firstName: null,
-    lastName: null,
-    email: null,
-    password: null,
-  });
-
-  const [errors, setErrors] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-  });
-
-  const handleChange = (e) => {
-    e.preventDefault();
-    const { name, value } = e.target;
-    let errors = errors;
-
-    switch (name) {
-      case "firstName":
-        errors.firstName =
-          value.length < 5
-            ? "First name must be at least 2 characters long"
-            : "";
-        break;
-      case "lastName":
-        errors.lastName =
-          value.length < 2
-            ? "Last name must be at least 2 characters long"
-            : "";
-        break;
-      case "email":
-        errors.email = emailRegex.test(value) ? "" : "Email is not valid!";
-        break;
-      case "password":
-        errors.password =
-          value.length < 8
-            ? "Password must be at least 8 characters long!"
-            : "";
-        break;
-      default:
-        break;
-    }
-    setErrors({ errors, [name]: value });
-  };
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    if (validateForm(errors)) {
-      console.info("Valid Form");
-    } else {
-      console.error("Invalid Form");
-    }
-  };
-
   return (
     <FormContainer>
       <form action="">
