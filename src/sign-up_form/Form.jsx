@@ -60,6 +60,7 @@ const Form = () => {
           value={data.firstName || ""}
           onChange={handleChange("firstName")}
         />
+        {error.firstName && <p className="error">{error.firstName}</p>}
         <input
           type="text"
           id="lastName"
@@ -67,6 +68,7 @@ const Form = () => {
           value={data.lastName || ""}
           onChange={handleChange("lastName")}
         />
+        {error.lastName && <p className="error">{error.lastName}</p>}
         <input
           type="email"
           id="email"
@@ -74,6 +76,7 @@ const Form = () => {
           value={data.email || ""}
           onChange={handleChange("email")}
         />
+        {error.email && <p className="error">{error.email}</p>}
         <input
           type="password"
           id="password"
@@ -81,6 +84,7 @@ const Form = () => {
           value={data.password || ""}
           onChange={handleChange("password")}
         />
+        {error.password && <p className="error">{error.password}</p>}
         <button type="submit">CLAIM YOUR FREE TRIAL</button>
         <p>
           By clicking the button, you are agreeing to our{" "}
