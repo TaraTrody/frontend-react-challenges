@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import useForm from "./useForm";
+import { useForm } from "./useForm";
 
 const Form = () => {
   const { data, errors, handleSubmit, handleChange } = useForm({
@@ -105,6 +105,20 @@ const inputBorder = {
   correct: "rgb(0 0 0 / 0.2)",
   error: "#FF7979",
 };
+const StyledInput = styled.input`
+  width: 100%;
+  height: 3.5rem;
+  border-width: 1px;
+  border-style: inset; 
+  border-color: ${(prop) =>
+    prop.correct ? inputBorder.correct : inputBorder.error};
+  border-radius: 5px;
+  margin-bottom: 2em;
+  padding-left: 1.6em;
+  font-weight: 600
+  font-size: 0.875rem;
+  letter-spacing: 0.1rem;
+`;
 
 const FormContainer = styled.div`
   background-color: #fff;
@@ -125,7 +139,7 @@ const FormContainer = styled.div`
 
   form > .error {
     color: #ff7979;
-    justify-self: end;
+    text-align: end;
   }
 
   form > button {
@@ -160,19 +174,4 @@ const FormContainer = styled.div`
       margin-top: 2em;
     }
   }
-`;
-
-const StyledInput = styled.input`
-  width: 100%;
-  height: 3.5rem;
-  border-width: 1px;
-  border-style: inset; 
-  border-color: ${(prop) =>
-    prop.correct ? inputBorder.correct : inputBorder.error};
-  border-radius: 5px;
-  margin-bottom: 2em;
-  padding-left: 1.6em;
-  font-weight: 600
-  font-size: 0.875rem;
-  letter-spacing: 0.1rem;
 `;
