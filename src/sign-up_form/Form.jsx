@@ -31,7 +31,8 @@ const Form = () => {
           message: "Email cannot be empty",
         },
         pattern: {
-          value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+          value:
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
           message: "Looks like this is not an email",
         },
       },
@@ -54,29 +55,33 @@ const Form = () => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          name="firstName"
           id="firstName"
           placeholder="Jonathan "
+          value={data.firstName || ""}
+          onChange={handleChange("firstName")}
         />
         <input
           type="text"
-          name="lastName"
           id="lastName"
           placeholder="Last Name"
+          value={data.lastName || ""}
+          onChange={handleChange("lastName")}
         />
         <input
           type="email"
-          name="email"
           id="email"
           placeholder="Email Address"
+          value={data.email || ""}
+          onChange={handleChange("email")}
         />
         <input
           type="password"
-          name="password"
           id="password"
           placeholder="Password"
+          value={data.password || ""}
+          onChange={handleChange("password")}
         />
-        <button type="button">CLAIM YOUR FREE TRIAL</button>
+        <button type="submit">CLAIM YOUR FREE TRIAL</button>
         <p>
           By clicking the button, you are agreeing to our{" "}
           <span>Terms and Services</span>
