@@ -42,7 +42,7 @@ const Form = () => {
           message: "Password cannot be empty",
         },
         custom: {
-          isValid: (value) => value.length >= 8,
+          isValid: (value) => (value === undefined ? false : value.length >= 8),
           message: "Password needs to be at least 8 characters",
         },
       },
