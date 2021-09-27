@@ -3,7 +3,7 @@ import styled from "styled-components";
 import useForm from "./useForm";
 
 const Form = () => {
-  const { data, error, handleSubmit, handleChange } = useForm({
+  const { data, errors, handleSubmit, handleChange } = useForm({
     validations: {
       firstName: {
         required: {
@@ -60,7 +60,7 @@ const Form = () => {
           value={data.firstName || ""}
           onChange={handleChange("firstName")}
         />
-        {error.firstName && <p className="error">{error.firstName}</p>}
+        {errors.firstName && <p className="error">{errors.firstName}</p>}
         <input
           type="text"
           id="lastName"
@@ -68,7 +68,7 @@ const Form = () => {
           value={data.lastName || ""}
           onChange={handleChange("lastName")}
         />
-        {error.lastName && <p className="error">{error.lastName}</p>}
+        {errors.lastName && <p className="error">{errors.lastName}</p>}
         <input
           type="email"
           id="email"
@@ -76,7 +76,7 @@ const Form = () => {
           value={data.email || ""}
           onChange={handleChange("email")}
         />
-        {error.email && <p className="error">{error.email}</p>}
+        {errors.email && <p className="error">{errors.email}</p>}
         <input
           type="password"
           id="password"
@@ -84,7 +84,7 @@ const Form = () => {
           value={data.password || ""}
           onChange={handleChange("password")}
         />
-        {error.password && <p className="error">{error.password}</p>}
+        {errors.password && <p className="error">{errors.password}</p>}
         <button type="submit">CLAIM YOUR FREE TRIAL</button>
         <p>
           By clicking the button, you are agreeing to our{" "}
@@ -124,6 +124,11 @@ const FormContainer = styled.div`
     font-weight: 600
     font-size: 0.875rem;
     letter-spacing: 0.1rem;
+  }
+
+  form > .error {
+    color: #FF7979;
+    justify-self: end;
   }
 
   form > button {
