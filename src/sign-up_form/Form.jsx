@@ -1,16 +1,62 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { emailRegex, validateForm } from "./formValidation";
+import useForm from "./useForm";
 
 const Form = () => {
+  const { data, error, handleSubmit, handleChange } = useForm({
+    validations: {
+      firstName: {
+        required: {
+          value: true,
+          message: "First Name cannot be empty",
+        },
+        pattern: {
+          value: "^[A-Za-z]*$",
+          message: "Only letters allowed",
+        },
+      },
+      lastName: {
+        required: {
+          value: true,
+          message: "Last Name cannot be empty",
+        },
+        pattern: {
+          value: "^[A-Za-z]*$",
+          message: "Only letters allowed",
+        },
+      },
+      email: {
+        required: {
+          value: true,
+          message: "Email cannot be empty",
+        },
+        pattern: {
+          value: "^[A-Za-z]*$",
+          message: "Looks like this is not an email",
+        },
+      },
+      password: {
+        required: {
+          value: true,
+          message: "Password cannot be empty",
+        },
+        custom: {
+          isValid: (value) => value.length >= 8,
+          message: "Password needs to be at least 8 characters",
+        },
+      },
+    },
+    onSubmit: () => alert("User submitted"),
+  });
+
   return (
     <FormContainer>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="firstName"
           id="firstName"
-          placeholder="First Name"
+          placeholder="Jonathan "
         />
         <input
           type="text"
