@@ -53,7 +53,8 @@ const Form = () => {
   return (
     <FormContainer>
       <form onSubmit={handleSubmit}>
-        <input
+        <StyledInput
+          correct={!errors.firstName && true}
           type="text"
           id="firstName"
           placeholder="Jonathan "
@@ -61,7 +62,8 @@ const Form = () => {
           onChange={handleChange("firstName")}
         />
         {errors.firstName && <p className="error">{errors.firstName}</p>}
-        <input
+        <StyledInput
+          correct={!errors.lastName && true}
           type="text"
           id="lastName"
           placeholder="Last Name"
@@ -69,7 +71,8 @@ const Form = () => {
           onChange={handleChange("lastName")}
         />
         {errors.lastName && <p className="error">{errors.lastName}</p>}
-        <input
+        <StyledInput
+          correct={!errors.email && true}
           type="email"
           id="email"
           placeholder="Email Address"
@@ -77,7 +80,8 @@ const Form = () => {
           onChange={handleChange("email")}
         />
         {errors.email && <p className="error">{errors.email}</p>}
-        <input
+        <StyledInput
+          correct={!errors.password && true}
           type="password"
           id="password"
           placeholder="Password"
@@ -97,6 +101,11 @@ const Form = () => {
 
 export default Form;
 
+const inputBorder = {
+  correct: "rgb(0 0 0 / 0.2)",
+  error: "#FF7979",
+};
+
 const FormContainer = styled.div`
   background-color: #fff;
   width: 80%;
@@ -114,20 +123,8 @@ const FormContainer = styled.div`
     margin-bottom: 1.87em;
   }
 
-  form > input {
-    width: 100%;
-    height: 3.5rem;
-    border: 1px inset rgb(0 0 0 / 0.2);
-    border-radius: 5px;
-    margin-bottom: 2em;
-    padding-left: 1.6em;
-    font-weight: 600
-    font-size: 0.875rem;
-    letter-spacing: 0.1rem;
-  }
-
   form > .error {
-    color: #FF7979;
+    color: #ff7979;
     justify-self: end;
   }
 
@@ -156,16 +153,26 @@ const FormContainer = styled.div`
   }
 
   @media (min-width: 786px) {
-    width: 68%;  
-
-    
+    width: 68%;
 
     form {
-        width: 85%;
-        margin-top: 2em;
-    
+      width: 85%;
+      margin-top: 2em;
     }
-
-    
   }
+`;
+
+const StyledInput = styled.input`
+  width: 100%;
+  height: 3.5rem;
+  border-width: 1px;
+  border-style: inset; 
+  border-color: ${(prop) =>
+    prop.correct ? inputBorder.correct : inputBorder.error};
+  border-radius: 5px;
+  margin-bottom: 2em;
+  padding-left: 1.6em;
+  font-weight: 600
+  font-size: 0.875rem;
+  letter-spacing: 0.1rem;
 `;
