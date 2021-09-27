@@ -40,6 +40,7 @@ const Container = styled.div`
   display: grid;
   grid-template-rows: 2fr auto 3fr;
   justify-items: center;
+  align-items: center;
 
   @media (min-width: 786px) {
     width: 100vw;
