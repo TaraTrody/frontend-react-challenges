@@ -96,7 +96,7 @@ export default Form;
 const FormContainer = styled.div`
   background-color: #fff;
   width: 80%;
-  height: 30rem;
+  min-height: 30rem;
   color: #3d3b48;
   margin-top: 2rem;
   display: flex;

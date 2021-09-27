@@ -43,7 +43,7 @@ const Container = styled.div`
 
   @media (min-width: 786px) {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 25% 75%;
