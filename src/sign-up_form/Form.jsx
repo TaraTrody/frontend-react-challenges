@@ -57,7 +57,7 @@ const Form = () => {
           correct={!errors.firstName && true}
           type="text"
           id="firstName"
-          placeholder="Jonathan "
+          placeholder="First Name "
           value={data.firstName || ""}
           onChange={handleChange("firstName")}
         />
@@ -101,23 +101,27 @@ const Form = () => {
 
 export default Form;
 
-const inputBorder = {
-  correct: "rgb(0 0 0 / 0.2)",
-  error: "#FF7979",
+
+const borderStyle = {
+  correct: "1px inset rgb(0 0 0 / 0.2)",
+  error: "1px solid #FF7979",
 };
+
 const StyledInput = styled.input`
   width: 100%;
-  height: 3.5rem;
-  border-width: 1px;
-  border-style: inset; 
-  border-color: ${(prop) =>
-    prop.correct ? inputBorder.correct : inputBorder.error};
+  height: 3.5rem; 
+  border: ${(prop) => (prop.correct ? borderStyle.correct : borderStyle.error)};
   border-radius: 5px;
   margin-bottom: 2em;
   padding-left: 1.6em;
   font-weight: 600
   font-size: 0.875rem;
   letter-spacing: 0.1rem;
+  &:focus {
+    outline: none !important;
+    border:1px solid #5E54A4;
+    
+  }
 `;
 
 const FormContainer = styled.div`
