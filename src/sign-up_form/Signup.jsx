@@ -43,9 +43,9 @@ const Container = styled.div`
   align-items: center;
 
   @media (min-width: 786px) {
-    width: 100vw;
-    min-height: 100vh;
     display: grid;
+    width: 100%;
+    min-height: 100vh;
     grid-template-columns: 50% 50%;
     grid-template-rows: 25% 75%;
   }
@@ -57,8 +57,8 @@ const TitleSection = styled.div`
 
   @media (min-width: 786px) {
     grid-column: 1;
-    grid-row-start: 1;
-    grid-row-end: 3;
+    grid-row: 1 / 3;
+    height: 100%;
     align-items: center;
     justify-content: center;
   }
@@ -68,13 +68,15 @@ const BoxSection = styled.div`
   grid-row: 2;
   justify-self: center;
   align-self: end;
-  width: 80%;
+  // width: 80%;
+  display: flex;
 
   @media (min-width: 786px) {
     grid-column: 2;
     grid-row: 1;
-    justify-self: start;
+    height: 100%;
     width: 100%;
+    align-items: center;
   }
 `;
 
@@ -87,7 +89,10 @@ const FormSection = styled.div`
     grid-column: 2;
     grid-row: 2;
 
-    justify-content: start;
+    // justify-content: start;
+    // align-items: start;
+    align-self: start;
+    justify-self: start;
   }
 `;
 
@@ -136,7 +141,7 @@ const TitleText = styled.div`
 
 const Box = styled.div`
   background-color: #5e54a4;
-  width: 100%;
+  width: 100%; // add the true width
   height: 5rem;
   color: #fff;
   display: flex;
@@ -152,6 +157,6 @@ const Box = styled.div`
   }
 
   @media (min-width: 786px) {
-    width: 68%;
+    width: 33.75rem;
   }
 `;
