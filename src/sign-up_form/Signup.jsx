@@ -39,7 +39,7 @@ const Container = styled.div`
   min-width: 375px;
   display: grid;
   grid-template-rows: 2fr auto 3fr;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
 
   @media (min-width: 786px) {
@@ -54,6 +54,8 @@ const Container = styled.div`
 const TitleSection = styled.div`
   grid-row: 1;
   display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media (min-width: 786px) {
     grid-column: 1;
@@ -67,8 +69,7 @@ const TitleSection = styled.div`
 const BoxSection = styled.div`
   grid-row: 2;
   justify-self: center;
-  align-self: end;
-  // width: 80%;
+  width: 100%
   display: flex;
 
   @media (min-width: 786px) {
@@ -84,36 +85,39 @@ const FormSection = styled.div`
   grid-row: 3;
   display: flex;
   justify-content: center;
+  align-items: start;
 
   @media (min-width: 786px) {
     grid-column: 2;
     grid-row: 2;
 
-    // justify-content: start;
-    // align-items: start;
     align-self: start;
     justify-self: start;
   }
 `;
 
 const TitleText = styled.div`
-  width: 87.2%;
+  width: 20.4rem;
+  display: flex;
+  flex-direction: column;
   color: #fff;
   text-align: center;
   margin: 5.3rem auto;
 
   h1 {
     margin-bottom: 1rem;
-    font-size: 1.75rem;
+    font-size: 1.75em;
     font-weight: 700;
     letter-spacing: -0.02rem;
   }
 
   p {
     font-weight: 500;
+    font-size: 1em;
+    line-height: 26px;
   }
 
-  @media (min-width: 376px) {
+  @media (min-width: 786px) {
     h1 {
       font-size: 3rem;
     }
@@ -141,7 +145,7 @@ const TitleText = styled.div`
 
 const Box = styled.div`
   background-color: #5e54a4;
-  width: 100%; // add the true width
+  width: 20.4rem;
   height: 5rem;
   color: #fff;
   display: flex;

@@ -121,8 +121,8 @@ const margin = {
 
 const FormContainer = styled.div`
   background-color: #fff;
-  width: 100%;
-  min-height: 30rem;
+  width: 20.4rem;
+  max-height: 40.3rem;
   color: #3d3b48;
   display: flex;
   justify-content: center;
@@ -137,12 +137,12 @@ const FormContainer = styled.div`
 
 const StyledForm = styled.form`
   width: 85%;
-
   margin-bottom: 1.87em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 2em;
 
   @media (min-width: 786px) {
     width: 85%;
@@ -150,9 +150,13 @@ const StyledForm = styled.form`
   }
 `;
 const FormGroup = styled.div`
-  width: 28.75rem;
+  width: 17.4rem;
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 768px) {
+    width: 28.75rem;
+  }
 `;
 const StyledInput = styled.input`
   height: 3.5rem;
