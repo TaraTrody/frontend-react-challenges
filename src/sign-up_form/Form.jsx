@@ -52,7 +52,7 @@ const Form = () => {
 
   return (
     <FormContainer>
-      <form onSubmit={handleSubmit}>
+      <StyledForm onSubmit={handleSubmit}>
         <StyledInput
           correct={!errors.firstName && true}
           type="text"
@@ -61,7 +61,7 @@ const Form = () => {
           value={data.firstName || ""}
           onChange={handleChange("firstName")}
         />
-        {errors.firstName && <p className="error">{errors.firstName}</p>}
+        {errors.firstName && <Error>{errors.firstName}</Error>}
         <StyledInput
           correct={!errors.lastName && true}
           type="text"
@@ -70,7 +70,7 @@ const Form = () => {
           value={data.lastName || ""}
           onChange={handleChange("lastName")}
         />
-        {errors.lastName && <p className="error">{errors.lastName}</p>}
+        {errors.lastName && <Error>{errors.lastName}</Error>}
         <StyledInput
           correct={!errors.email && true}
           type="email"
@@ -79,7 +79,7 @@ const Form = () => {
           value={data.email || ""}
           onChange={handleChange("email")}
         />
-        {errors.email && <p className="error">{errors.email}</p>}
+        {errors.email && <Error>{errors.email}</Error>}
         <StyledInput
           correct={!errors.password && true}
           type="password"
@@ -88,24 +88,50 @@ const Form = () => {
           value={data.password || ""}
           onChange={handleChange("password")}
         />
-        {errors.password && <p className="error">{errors.password}</p>}
-        <button type="submit">CLAIM YOUR FREE TRIAL</button>
-        <p>
+        {errors.password && <Error>{errors.password}</Error>}
+        <StyledButton type="submit">CLAIM YOUR FREE TRIAL</StyledButton>
+        <Terms>
           By clicking the button, you are agreeing to our{" "}
           <span>Terms and Services</span>
-        </p>
-      </form>
+        </Terms>
+      </StyledForm>
     </FormContainer>
   );
 };
 
 export default Form;
 
-
 const borderStyle = {
   correct: "1px inset rgb(0 0 0 / 0.2)",
   error: "1px solid #FF7979",
 };
+
+const FormContainer = styled.div`
+  background-color: #fff;
+  width: 80%;
+  min-height: 30rem;
+  color: #3d3b48;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.625em;
+  box-shadow: 3px 3px 0 rgb(0 0 0 / 0.2), inset 0 1px 3px rgb(0 0 0 / 0.25);
+
+  @media (min-width: 786px) {
+    width: 68%;
+  }
+`;
+
+const StyledForm = styled.form`
+  width: 85%;
+  margin-top: 1.2em;
+  margin-bottom: 1.87em;
+
+  @media (min-width: 786px) {
+    width: 85%;
+    margin-top: 2em;
+  }
+`;
 
 const StyledInput = styled.input`
   width: 100%;
@@ -124,58 +150,32 @@ const StyledInput = styled.input`
   }
 `;
 
-const FormContainer = styled.div`
-  background-color: #fff;
-  width: 80%;
-  min-height: 30rem;
-  color: #3d3b48;
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  border-radius: 0.625em;
-  box-shadow: 3px 3px 0 rgb(0 0 0 / 0.2), inset 0 1px 3px rgb(0 0 0 / 0.25);
+const Error = styled.p`
+  color: #ff7979;
+  text-align: end;
+  font-size: 0.68em;
+`;
 
-  form {
-    width: 85%;
-    margin-top: 1.2em;
-    margin-bottom: 1.87em;
-  }
+const Terms = styled.p`
+  font-size: 0.6875rem;
+  text-align: center;
 
-  form > .error {
+  span {
+    font-weight: 700;
     color: #ff7979;
-    text-align: end;
   }
+`;
 
-  form > button {
-    background-color: #38cc8b;
-    color: #fff;
-    width: 100%;
-    height: 3.5rem;
-    border-radius: 5px;
-    box-shadow: 3px 3px 0 rgb(56, 204, 139, 0.2),
-      inset 0 1px 3px rgb(0 0 0 / 0.25);
-    margin-bottom: 1em;
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 0.1rem;
-  }
-
-  form > p {
-    font-size: 0.6875rem;
-    text-align: center;
-
-    span {
-      font-weight: 700;
-      color: #ff7979;
-    }
-  }
-
-  @media (min-width: 786px) {
-    width: 68%;
-
-    form {
-      width: 85%;
-      margin-top: 2em;
-    }
-  }
+const StyledButton = styled.button`
+  background-color: #38cc8b;
+  color: #fff;
+  width: 100%;
+  height: 3.5rem;
+  border-radius: 5px;
+  box-shadow: 3px 3px 0 rgb(56, 204, 139, 0.2),
+    inset 0 1px 3px rgb(0 0 0 / 0.25);
+  margin-bottom: 1em;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
 `;
