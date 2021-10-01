@@ -176,9 +176,9 @@ const StyledInput = styled.input.attrs(({ placeholder }) => ({
     !prop.correct &&
     css`
       background-image: url(${icon});
-      background-size: 16px 16px;
+      background-size: 1rem 1rem;
       background-repeat: no-repeat;
-      background-position: 420px;
+      background-position: 95%;
     `}
 
   &:focus {
