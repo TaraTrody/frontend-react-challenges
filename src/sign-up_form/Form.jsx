@@ -93,9 +93,8 @@ const Form = () => {
             id="password"
             placeholder="Password"
             value={data.password || ""}
-            onChange={handleChange("password")}>
-              <Icon></Icon>
-          </StyledInput>
+            onChange={handleChange("password")}
+          />
           {errors.password && <Error>{errors.password}</Error>}
         </FormGroup>
         <StyledButton type="submit">CLAIM YOUR FREE TRIAL</StyledButton>
@@ -170,7 +169,11 @@ const StyledInput = styled.input.attrs(({ placeholder }) => ({
   font-size: 0.875rem;
   letter-spacing: 0.1rem;
   display: inline-flex;
-
+  padding-right: 30px;
+  background-image: url("https://www.prospectsoft.com/images/security/shield2.svg");
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: right 0 ;
   &:focus {
     outline: none !important;
     border: 1px solid #5e54a4;
@@ -178,10 +181,6 @@ const StyledInput = styled.input.attrs(({ placeholder }) => ({
   &::placeholder {
     color: ${(prop) => prop.placeholder === "email@example.com" && "#FF7979"};
   }
-`;
-
-const Icon = styled.div`
-
 `;
 
 const Error = styled.p`
