@@ -1,6 +1,7 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { useForm } from "./useForm";
+import icon from "../assets/icons/icon-error.svg";
 
 const Form = () => {
   const { data, errors, handleSubmit, handleChange } = useForm({
@@ -58,7 +59,7 @@ const Form = () => {
             correct={!errors.firstName && true}
             type="text"
             id="firstName"
-            placeholder="First Name "
+            placeholder={errors.firstName ? "" : "First Name"}
             value={data.firstName || ""}
             onChange={handleChange("firstName")}
           />
@@ -69,7 +70,7 @@ const Form = () => {
             correct={!errors.lastName && true}
             type="text"
             id="lastName"
-            placeholder="Last Name"
+            placeholder={errors.lastName ? "" : "Last Name"}
             value={data.lastName || ""}
             onChange={handleChange("lastName")}
           />
@@ -91,7 +92,7 @@ const Form = () => {
             correct={!errors.password && true}
             type="password"
             id="password"
-            placeholder="Password"
+            placeholder={errors.password ? "" : "Password"}
             value={data.password || ""}
             onChange={handleChange("password")}
           />
@@ -170,10 +171,16 @@ const StyledInput = styled.input.attrs(({ placeholder }) => ({
   letter-spacing: 0.1rem;
   display: inline-flex;
   padding-right: 30px;
-  background-image: url("https://www.prospectsoft.com/images/security/shield2.svg");
-  background-size: 16px 16px;
-  background-repeat: no-repeat;
-  background-position: right 0 ;
+
+  ${(prop) =>
+    !prop.correct &&
+    css`
+      background-image: url(${icon});
+      background-size: 16px 16px;
+      background-repeat: no-repeat;
+      background-position: 420px;
+    `}
+
   &:focus {
     outline: none !important;
     border: 1px solid #5e54a4;
