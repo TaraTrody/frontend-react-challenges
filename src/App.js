@@ -1,19 +1,15 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 import Gallery from "./home";
 import Signup from "./sign-up_form";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Gallery />
-        <Switch>
-          <Route path="/signup" component={Signup}></Route>
-        </Switch>
-      </div>
-    </Router>
+    <div className="App">
+      <Route path="/" component={Gallery} exact />
+      <Route path="/signup" component={Signup} exact />
+    </div>
   );
 }
 
