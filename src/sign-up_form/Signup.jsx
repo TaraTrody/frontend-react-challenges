@@ -48,6 +48,7 @@ const Container = styled.div`
     min-height: 100vh;
     grid-template-columns: 50% 50%;
     grid-template-rows: 25% 75%;
+    overflow: auto;
   }
 `;
 
@@ -68,16 +69,19 @@ const TitleSection = styled.div`
 
 const BoxSection = styled.div`
   grid-row: 2;
-  justify-self: center;
-  width: 100%
   display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 20px;
 
   @media (min-width: 786px) {
     grid-column: 2;
     grid-row: 1;
     height: 100%;
     width: 100%;
-    align-items: center;
+    justify-content: start;
+    align-items: flex-end;
+    padding-bottom: 20px;
   }
 `;
 
@@ -85,19 +89,20 @@ const FormSection = styled.div`
   grid-row: 3;
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
 
   @media (min-width: 786px) {
     grid-column: 2;
     grid-row: 2;
-
-    align-self: start;
-    justify-self: start;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 `;
 
 const TitleText = styled.div`
-  width: 20.4rem;
+  width: 87.2%;
   display: flex;
   flex-direction: column;
   color: #fff;
@@ -145,11 +150,11 @@ const TitleText = styled.div`
 
 const Box = styled.div`
   background-color: #5e54a4;
-  width: 20.4rem;
-  height: 5rem;
+  width: 75%;
+  height: 3.75rem;
   color: #fff;
   display: flex;
-  align-content: center;
+  justify-content: center;
   border-radius: 0.625em;
   box-shadow: 3px 3px 0 rgb(0 0 0 / 0.2), inset 0 1px 3px rgb(0 0 0 / 0.25);
   font-size: 0.9rem;
@@ -161,6 +166,6 @@ const Box = styled.div`
   }
 
   @media (min-width: 786px) {
-    width: 33.75rem;
+    width: 75%;
   }
 `;
