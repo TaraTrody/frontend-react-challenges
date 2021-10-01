@@ -11,15 +11,28 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
 
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
     a {
         text-decoration: none;
         color: inherit;
         cursor: pointer;
     }
 
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+
+    }
     body {
         font-family: 'Poppins', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-        margin: 0;
+        margin: 0px;
+
     }
     
     h1,
