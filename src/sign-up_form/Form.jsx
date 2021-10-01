@@ -80,7 +80,7 @@ const Form = () => {
             correct={!errors.email && true}
             type="email"
             id="email"
-            placeholder="Email Address"
+            placeholder={errors.email ? "email@example.com" : "Email Address"}
             value={data.email || ""}
             onChange={handleChange("email")}
           />
@@ -93,8 +93,9 @@ const Form = () => {
             id="password"
             placeholder="Password"
             value={data.password || ""}
-            onChange={handleChange("password")}
-          />
+            onChange={handleChange("password")}>
+              <Icon></Icon>
+          </StyledInput>
           {errors.password && <Error>{errors.password}</Error>}
         </FormGroup>
         <StyledButton type="submit">CLAIM YOUR FREE TRIAL</StyledButton>
@@ -121,22 +122,22 @@ const margin = {
 
 const FormContainer = styled.div`
   background-color: #fff;
-  width: 20.4rem;
-  max-height: 40.3rem;
+  width: 75%;
   color: #3d3b48;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 0.625em;
   box-shadow: 3px 3px 0 rgb(0 0 0 / 0.2), inset 0 1px 3px rgb(0 0 0 / 0.25);
+  overflow: auto;
 
   @media (min-width: 786px) {
-    width: 33.75rem;
+    width: 75%;
   }
 `;
 
 const StyledForm = styled.form`
-  width: 85%;
+  width: 87.2%;
   margin-bottom: 1.87em;
   display: flex;
   flex-direction: column;
@@ -145,20 +146,21 @@ const StyledForm = styled.form`
   margin-top: 2em;
 
   @media (min-width: 786px) {
-    width: 85%;
+    width: 87.2%;
     margin-top: 2em;
   }
 `;
 const FormGroup = styled.div`
-  width: 17.4rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
 
   @media (min-width: 768px) {
-    width: 28.75rem;
   }
 `;
-const StyledInput = styled.input`
+const StyledInput = styled.input.attrs(({ placeholder }) => ({
+  placeholder,
+}))`
   height: 3.5rem;
   border: ${(prop) => (prop.correct ? borderStyle.correct : borderStyle.error)};
   border-radius: 5px;
@@ -167,10 +169,19 @@ const StyledInput = styled.input`
   font-weight: 600;
   font-size: 0.875rem;
   letter-spacing: 0.1rem;
+  display: inline-flex;
+
   &:focus {
     outline: none !important;
     border: 1px solid #5e54a4;
   }
+  &::placeholder {
+    color: ${(prop) => prop.placeholder === "email@example.com" && "#FF7979"};
+  }
+`;
+
+const Icon = styled.div`
+
 `;
 
 const Error = styled.p`
