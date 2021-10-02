@@ -11,6 +11,8 @@ export const useForm = (options) => {
       ...data,
       [key]: value,
     });
+
+    errors[key] && setErrors({ ...errors, [key]: "" });
   };
 
   const handleSubmit = (e) => {
