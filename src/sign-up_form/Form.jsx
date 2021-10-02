@@ -48,7 +48,12 @@ const Form = () => {
         },
       },
     },
-    onSubmit: () => alert("User submitted"),
+    onSubmit: () => {
+      alert("User submitted");
+      setTimeout(() => {
+        window.location.reload();
+      }, 100);
+    },
   });
 
   return (
