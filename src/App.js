@@ -1,13 +1,16 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Signup from "./sign-up_form";
+import Signup from "./components/SignUp";
+import * as ROUTES from "./constants/routes";
 
 function App() {
   return (
-    <div className="App">
-      <Route path="/signup" component={Signup} exact />
-    </div>
+    <Router>
+      <div className="App">
+        <Route path={ROUTES.SIGN_IN} component={Signup} exact />
+      </div>
+    </Router>
   );
 }
 
