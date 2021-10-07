@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Route path={ROUTES.SIGN_IN} component={Signup} exact />
+        <Route path={ROUTES.SIGN_UP} component={Signup} exact />
       </div>
     </Router>
   );
