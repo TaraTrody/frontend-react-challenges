@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
-import img from "../assets/images/bg-intro-mobile.png";
+import img from "../../assets/images/bg-intro-mobile.png";
 
 import Form from "./Form";
 

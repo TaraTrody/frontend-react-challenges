@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components/macro";
 import { useForm } from "./useForm";
-import icon from "../assets/icons/icon-error.svg";
+import icon from "../../assets/icons/icon-error.svg";
 
 const Form = () => {
   const { data, errors, handleSubmit, handleChange } = useForm({
