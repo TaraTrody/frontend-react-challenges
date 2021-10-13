@@ -1,7 +1,8 @@
 import { useState } from "react";
 
-export const useForm = (options) => {
-  const [data, setData] = useState(options.initialValues || {});
+export default function useForm (...options) {
+  const [validation, onSubmit, initialValues] = options
+  const [data, setData] = useState(initialValues || {});
   const [errors, setErrors] = useState({});
 
   const handleChange = (key, sanitizeFn) => (e) => {
@@ -17,7 +18,7 @@ export const useForm = (options) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const validations = options?.validations;
+    const validations = validation.validations;
 
     if (validations) {
       let valid = true;
@@ -50,8 +51,8 @@ export const useForm = (options) => {
       }
 
       setErrors({});
-      if (options?.onSubmit) {
-        options.onSubmit();
+      if (onSubmit) {
+        onSubmit();
       }
     }
   };

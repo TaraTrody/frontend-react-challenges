@@ -1,4 +1,4 @@
-export const validations = {
+export const validation = {
   validations: {
     firstName: {
       required: {

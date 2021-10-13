@@ -1,11 +1,11 @@
 import React from "react";
 import styled, { css } from "styled-components/macro";
-import { useForm } from "./useForm";
+import useForm from "./useForm";
 import icon from "../../assets/icons/icon-error.svg";
-import { validations } from "../../formValidations";
+import { validation } from "../../formValidations";
 
 const Form = () => {
-  const { data, errors, handleSubmit, handleChange } = useForm(validations);
+  const { data, errors, handleSubmit, handleChange } = useForm(validation);
 
   return (
     <FormContainer>
