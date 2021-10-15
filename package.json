@@ -6,6 +6,10 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.0",
+    "@types/react": "^17.0.30",
+    "@types/react-dom": "^17.0.9",
     "dotenv": "^10.0.0",
     "firebase": "^9.1.1",
     "react": "^17.0.2",
@@ -13,6 +17,7 @@
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
     "styled-components": "^5.3.1",
+    "typescript": "^4.4.4",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -21,7 +26,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build:dev": "env-cmd -f .env.development npm run build && firebase deploy -P dev",
-    "build:prod": "env-cmd -f .env.production npm run build && firebase deploy -P prod" 
+    "build:prod": "env-cmd -f .env.production npm run build && firebase deploy -P prod"
   },
   "eslintConfig": {
     "extends": [
