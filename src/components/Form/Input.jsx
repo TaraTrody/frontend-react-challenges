@@ -3,12 +3,7 @@ import styled, { css } from "styled-components/macro";
 import icon from "../../assets/icons/icon-error.svg";
 
 export default function Input(props) {
-  return (
-    <FormGroup>
-      <StyledInput />
-      {props.children}
-    </FormGroup>
-  );
+  return <StyledInput {...props} />;
 }
 
 const borderStyle = {
@@ -21,14 +16,6 @@ const margin = {
   error: "0",
 };
 
-const FormGroup = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-
-  @media (min-width: 768px) {
-  }
-`;
 const StyledInput = styled.input.attrs(({ placeholder }) => ({
   placeholder,
 }))`
