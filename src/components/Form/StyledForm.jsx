@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 export default function Form(props) {
-  return <StyledForm>{props.children}</StyledForm>;
+  return <StyledForm {...props}>{props.children}</StyledForm>;
 }
 
 const StyledForm = styled.form`
