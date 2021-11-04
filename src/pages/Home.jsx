@@ -12,6 +12,7 @@ import {
 } from "../components/Form";
 import { validation } from "../validations/formValidations";
 import useForm from "../hooks/useForm.ts";
+import useWindowSize from "../hooks/useWindowSize.ts";
 
 const onSubmit = () => console.log("submitted!!!");
 
@@ -20,7 +21,8 @@ export default function Home() {
     validation,
     onSubmit
   );
-
+  const clientWidth = useWindowSize();
+  console.log(clientWidth);
   return (
     <Container gridAreas="multi">
       <Layout>
