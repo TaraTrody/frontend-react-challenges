@@ -19,8 +19,8 @@ const Background = styled.div`
   background-image: url(${img});
   min-width: 375px;
   display: grid;
-  grid-template-rows:${(prop) =>
-    prop.gridAreas === "multi?" ? gridStyle.multi.mobile : gridStyle.single} 
+  grid-template-rows: ${(prop) =>
+    prop.gridAreas === "multi" ? gridStyle.multi.mobile : gridStyle.single};
   justify-content: center;
   align-items: center;
 
@@ -29,9 +29,13 @@ const Background = styled.div`
     width: 100%;
     min-height: 100vh;
     grid-template-columns: ${(prop) =>
-      prop.gridAreas === "multi?" ? gridStyle.multi.desktop : gridStyle.single} 
+      prop.gridAreas === "multi"
+        ? gridStyle.multi.desktop.col
+        : gridStyle.single};
     grid-template-rows: ${(prop) =>
-      prop.gridAreas === "multi?" ? gridStyle.multi.desktop : gridStyle.single} 
+      prop.gridAreas === "multi"
+        ? gridStyle.multi.desktop.row
+        : gridStyle.single};
     overflow: auto;
   }
 `;
