@@ -22,7 +22,7 @@ export default function Home() {
   );
 
   return (
-    <Container>
+    <Container gridAreas="multi">
       <Layout>
         <Card>
           <StyledForm onSubmit={handleSubmit} noValidate>
