@@ -2,6 +2,7 @@ import React from "react";
 import Container from "../components/Container";
 import { Card, StyledForm, FormGroup, Input, Error } from "../components/Form";
 import useForm from "../hooks/useForm.ts";
+
 import { validation } from "../validations/formValidations";
 
 const onSubmit = () => console.log("submitted!!!");
@@ -11,8 +12,9 @@ export default function ForgotPassword() {
     validation,
     onSubmit
   );
+
   return (
-    <Container>
+    <Container gridArea="single">
       <Card>
         <StyledForm onSubmit={handleSubmit} noValidate>
           <FormGroup>
