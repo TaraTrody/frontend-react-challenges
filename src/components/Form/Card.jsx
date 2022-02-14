@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components/macro";
 
-const Card = (props) => <FormContainer>{props.children}</FormContainer>;
+const Card = (props) => (
+  <FormContainer {...props}>{props.children}</FormContainer>
+);
 
 export default Card;
 
@@ -17,6 +19,7 @@ const FormContainer = styled.div`
   overflow: auto;
 
   @media (min-width: 786px) {
-    width: 75%;
+    width: ${(prop) => (prop.width ? prop.width : "75%")};
+    // width: 75%;
   }
 `;
