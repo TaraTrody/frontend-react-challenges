@@ -1,10 +1,15 @@
 import React from "react";
+import {useLocation, matchPath} from 'react-router-dom'
 import styled from "styled-components/macro";
 
 const Layout = (props) => {
+  const {pathname} = useLocation();
+  const isHome = matchPath(pathname,{path: "/", exact:true})
   return (
     <>
-      <TitleSection>
+    { isHome && 
+
+      (<><TitleSection>
         <TitleText>
           <h1>Learn to code by watching others</h1>
           <p>
@@ -20,7 +25,8 @@ const Layout = (props) => {
             <b>Try it free 7 days</b> then $20/mo thereafter
           </p>
         </Box>
-      </BoxSection>
+      </BoxSection> </> )
+}
       <FormSection>{props.children}</FormSection>
     </>
   );
