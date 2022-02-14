@@ -14,12 +14,9 @@ import { validation } from "../validations/formValidations";
 import useForm from "../hooks/useForm.ts";
 import useWindowSize from "../hooks/useWindowSize.ts";
 
-const onSubmit = () => console.log("submitted!!!");
-
 export default function Home() {
   const { data, errors, handleSubmit, handleChange } = useForm(
-    validation,
-    onSubmit
+    validation
   );
   const clientWidth = useWindowSize();
   console.log(clientWidth);
