@@ -6,13 +6,14 @@ interface Validation {
     message: string;
   };
   pattern?: {
-    value: string;
+    value: string | RegExp;
     message: string;
   };
   custom?: {
     isValid: (value: string) => boolean;
     message: string;
   };
+  onSubmit?: () => void;
 }
 type Error<Type> = Partial<Record<keyof Type, string>>;
 type Validations<Type extends {}> = Partial<Record<keyof Type, Validation>>;
