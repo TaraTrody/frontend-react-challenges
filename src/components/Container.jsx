@@ -21,11 +21,10 @@ const Background = styled.div`
   display: grid;
   grid-template-rows: ${(prop) =>
     prop.gridAreas === "multi" ? gridStyle.multi.mobile : gridStyle.single};
-  justify-content: center;
+  justify-items: center;
   align-items: center;
 
   @media (min-width: 786px) {
-    display: grid;
     width: 100%;
     min-height: 100vh;
     grid-template-columns: ${(prop) =>
