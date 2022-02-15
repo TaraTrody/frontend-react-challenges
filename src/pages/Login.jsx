@@ -15,7 +15,7 @@ import { validations } from "../validations/formValidations";
 export default function Register() {
   const { data, errors, handleSubmit, handleChange } = useForm({ validations });
   return (
-    <Container>
+    <Container gridAreas="multi">
       <Layout>
         <Card>
           <StyledForm onSubmit={handleSubmit}>
