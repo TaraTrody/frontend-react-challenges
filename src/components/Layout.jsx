@@ -8,26 +8,27 @@ const Layout = (props) => {
   const isLogin = matchPath(pathname, { path: "/login", exact: true });
   return (
     <>
-    { isHome && 
-
-      (<><TitleSection>
-        <TitleText>
-          <h1>Learn to code by watching others</h1>
-          <p>
-            See how experienced developers solve problem in real-time. Watching
-            scripted tutorials is great, but understanding how developers think
-            is valuable
-          </p>
-        </TitleText>
-      </TitleSection>
-      <BoxSection>
-        <Box>
-          <p>
-            <b>Try it free 7 days</b> then $20/mo thereafter
-          </p>
-        </Box>
-      </BoxSection> </> )
-}
+      {(isHome || isLogin) && (
+        <>
+          <TitleSection>
+            <TitleText>
+              <h1>Learn to code by watching others</h1>
+              <p>
+                See how experienced developers solve problem in real-time.
+                Watching scripted tutorials is great, but understanding how
+                developers think is valuable
+              </p>
+            </TitleText>
+          </TitleSection>
+          <BoxSection>
+            <Box>
+              <p>
+                <b>Try it free 7 days</b> then $20/mo thereafter
+              </p>
+            </Box>
+          </BoxSection>{" "}
+        </>
+      )}
       <FormSection>{props.children}</FormSection>
     </>
   );
