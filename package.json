@@ -45,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-router-dom": "^5.3.3",
     "env-cmd": "^10.1.0"
   }
 }
