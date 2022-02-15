@@ -10,10 +10,10 @@ import {
 } from "../components/Form";
 import Container from "../components/Container";
 import useForm from "../hooks/useForm";
-import { validation } from "../validations/formValidations";
+import { validations } from "../validations/formValidations";
 
 export default function Register() {
-  const { data, errors, handleSubmit, handleChange } = useForm(validation);
+  const { data, errors, handleSubmit, handleChange } = useForm({ validations });
   return (
     <Container>
       <Layout>
