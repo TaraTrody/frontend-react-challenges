@@ -1,5 +1,5 @@
-export const validation = {
-  validations: {
+export const validations = {
+  // validations: {
     firstName: {
       required: {
         value: true,
@@ -41,11 +41,11 @@ export const validation = {
         message: "Password needs to be at least 8 characters",
       },
     },
-  },
-  onSubmit: () => {
-    alert("User submitted");
-    setTimeout(() => {
-      window.location.reload();
-    }, 100);
-  },
-};
+  }
+  // onSubmit: () => {
+  //   console.log("user Submitted");
+  //   alert("User submitted");
+  //   setTimeout(() => {
+  //     window.location.reload();
+  //   }, 100);
+  // },
