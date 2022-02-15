@@ -1,10 +1,11 @@
 import React from "react";
-import {useLocation, matchPath} from 'react-router-dom'
+import { useLocation, matchPath } from "react-router-dom";
 import styled from "styled-components/macro";
 
 const Layout = (props) => {
-  const {pathname} = useLocation();
-  const isHome = matchPath(pathname,{path: "/", exact:true})
+  const { pathname } = useLocation();
+  const isHome = matchPath(pathname, { path: "/", exact: true });
+  const isLogin = matchPath(pathname, { path: "/login", exact: true });
   return (
     <>
     { isHome && 
