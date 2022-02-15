@@ -1,6 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 
-interface Validation {
+type Validation = {
   required?: {
     value: boolean;
     message: string;
@@ -13,15 +13,14 @@ interface Validation {
     isValid: (value: string) => boolean;
     message: string;
   };
-  onSubmit?: () => void;
-}
+};
 type Error<Type> = Partial<Record<keyof Type, string>>;
-type Validations<Type extends {}> = Partial<Record<keyof Type, Validation>>;
+type Validations<Type> = Partial<Record<keyof Type, Validation>>;
 
 export default function useForm<
-  Type extends Record<keyof Type, any> = {}
->(options?: {
-  validations?: Validations<Type>;
+  Type extends Record<keyof Type, any> = {}//do i need optional default if validations not optional or should it be optional?
+>(options: {
+  validations: Validations<Type>;
   initialValues?: Partial<Type>;
   onSubmit?: () => void;
 }) {
@@ -45,43 +44,40 @@ export default function useForm<
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const validations = options?.validations;
-    if (validations) {
-      let valid = true;
-      const newErrors: Error<Type> = {};
 
-      for (const key in validations) {
+    const validations = options.validations;
+    const newErrors: Error<Type> = {};
+
+    for (const key in validations) {
+      if (document.body.contains(document.getElementById(key))) {
         const value = data[key];
         const validation = validations[key];
         const k = key as keyof Type;
 
         if (validation?.required?.value && !value) {
-          valid = false;
           newErrors[k] = validation?.required?.message;
         }
 
         const pattern = validation?.pattern;
         if (pattern?.value && !RegExp(pattern.value).test(value)) {
-          valid = false;
           newErrors[key] = pattern.message;
         }
 
         const custom = validation?.custom;
         if (custom?.isValid && !custom.isValid(value)) {
-          valid = false;
           newErrors[key] = custom.message;
         }
       }
-      if (!valid) {
-        setErrors(newErrors);
-        return;
-      }
+    }
+    if (Object.keys(newErrors).length !== 0) {
+      setErrors(newErrors);
+      return;
+    }
 
-      setErrors({});
+    setErrors({});
 
-      if (options?.onSubmit) {
-        options?.onSubmit();
-      }
+    if (options?.onSubmit) {
+      options?.onSubmit();
     }
   };
 
