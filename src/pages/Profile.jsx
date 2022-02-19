@@ -10,4 +10,4 @@ export default function Profile() {
   );
 }
 
-const Text = styled.p``;
+const Text = styled.h1``;
